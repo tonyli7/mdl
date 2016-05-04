@@ -20,7 +20,7 @@ def run(filename):
         return
 
     stack = [ tmp ]
-    points = [ tmp ]
+    points = new_matrix()
     screen = new_screen()
     ARG_COMMANDS = [ 'line', 'scale', 'move', 'rotate', 'circle', 'bezier', 'hermite', 'sphere', 'box', 'torus']
     
@@ -59,6 +59,7 @@ def run(filename):
                 add_sphere( points, args[0], args[1], 0, args[2], 5 )
                 matrix_mult(stack[-1], points)
                 draw_polygons(points,screen,color)
+                
                 points=[]
                 
             elif cmd == 'torus':
@@ -84,9 +85,12 @@ def run(filename):
                 matrix_mult( stack[-1], t )
                 stack[-1] = t
                 
-            else:
-                axis = args[1]
-                angle = args[2] * ( math.pi / 180 )
+            elif cmd == 'rotate':
+               
+                axis = args[0]
+                angle = args[1] * ( math.pi / 180 )
+               
+               
                 if axis == 'x':
                     r = make_rotX( angle )
                 elif axis == 'y':

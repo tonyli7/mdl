@@ -1,0 +1,5 @@
+push
+move 0 201 0
+sphere 0 0 0 50
+display
+quit

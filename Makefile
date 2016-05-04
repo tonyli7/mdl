@@ -5,4 +5,4 @@ clean:
 	rm *pyc *out parsetab.py
 
 clear:
-	rm *pyc *out parsetab.py *ppm
+	rm *pyc;rm *out;rm parsetab.py;rm *.ppm;rm *#;rm *~
