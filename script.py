@@ -56,7 +56,7 @@ def run(filename):
                 points=[]
                 
             elif cmd == 'sphere':
-                add_sphere( points, args[0], args[1], 0, args[2], 5 )
+                add_sphere( points, args[0], args[1], args[2], args[3], 5 )
                 matrix_mult(stack[-1], points)
                 draw_polygons(points,screen,color)
                 
